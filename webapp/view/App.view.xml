@@ -11,6 +11,7 @@
         id="idTheMuseumOfButterflies"
         rows="{butterflies>/butterflies}"
         enableCellFilter="true"
+        enableColumnFreeze="true"
     >
         <extension>
             <m:OverflowToolbar style="Clear">
