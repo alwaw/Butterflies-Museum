@@ -11,8 +11,8 @@
         <extension>
             <m:OverflowToolbar style="Clear">
                 <m:Title
-                    id="title"
-                    text="Products"
+                    id="idTheMuseumOfButterflies"
+                    text="The Museum of Butterflies"
                 />
             </m:OverflowToolbar>
         </extension>
