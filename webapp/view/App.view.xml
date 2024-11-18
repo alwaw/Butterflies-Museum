@@ -1,0 +1,148 @@
+<mvc:View
+    controllerName="ui5.walkthrough.controller.App"
+    xmlns="sap.ui.table"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:u="sap.ui.unified"
+    xmlns:c="sap.ui.core"
+    xmlns:m="sap.m"
+    height="100%"
+>
+    <Table rows="{butterflies>/butterflies}">
+        <extension>
+            <m:OverflowToolbar style="Clear">
+                <m:Title
+                    id="title"
+                    text="Products"
+                />
+            </m:OverflowToolbar>
+        </extension>
+        <columns>
+            <Column>
+                <m:Label text="GUID" />
+                <template>
+                    <m:Text
+                        text="{butterflies>GUID}"
+                        wrapping="false"
+                    />
+                </template>
+            </Column>
+            <Column>
+                <m:Label text="Name" />
+                <template>
+                    <m:Text
+                        text="{butterflies>Name}"
+                        wrapping="false"
+                    />
+                </template>
+            </Column>
+            <Column>
+                <m:Label text="Family" />
+                <template>
+                    <m:Text
+                        text="{butterflies>Family}"
+                        wrapping="false"
+                    />
+                </template>
+            </Column>
+            <Column>
+                <m:Label text="Location" />
+                <template>
+                    <m:Text
+                        text="{butterflies>Location}"
+                        wrapping="false"
+                    />
+                </template>
+            </Column>
+            <Column>
+                <m:Label text="Date" />
+                <template>
+                    <m:Text
+                        text="{butterflies>Date}"
+                        wrapping="false"
+                    />
+                </template>
+            </Column>
+            <Column>
+                <m:Label text="Wingspan" />
+                <template>
+                    <m:Text
+                        text="{butterflies>Wingspan}"
+                        wrapping="false"
+                    />
+                </template>
+            </Column>
+            <Column>
+                <m:Label text="Weight" />
+                <template>
+                    <m:Text
+                        text="{butterflies>Weight}"
+                        wrapping="false"
+                    />
+                </template>
+            </Column>
+            <Column>
+                <m:Label text="Price" />
+                <template>
+                    <m:Text
+                        text="{butterflies>Price}"
+                        wrapping="false"
+                    />
+                </template>
+            </Column>
+            <Column>
+                <m:Label text="Abundance" />
+                <template>
+                    <m:Text
+                        text="{butterflies>Abundance}"
+                        wrapping="false"
+                    />
+                </template>
+            </Column>
+            <Column>
+                <m:Label text="Color Rating" />
+                <template>
+                    <m:Text
+                        text="{butterflies>Color Rating}"
+                        wrapping="false"
+                    />
+                </template>
+            </Column>
+            <Column>
+                <m:Label text="Habitat" />
+                <template>
+                    <m:Text
+                        text="{butterflies>Habitat}"
+                        wrapping="false"
+                    />
+                </template>
+            </Column>
+            <Column>
+                <m:Label text="Lifespan" />
+                <template>
+                    <m:Text
+                        text="{butterflies>Lifespan}"
+                        wrapping="false"
+                    />
+                </template>
+            </Column>
+            <Column>
+                <m:Label text="Migration Pattern" />
+                <template>
+                    <m:Text
+                        text="{butterflies>Migration Pattern}"
+                        wrapping="false"
+                    />
+                </template>
+            </Column>
+            <Column>
+                <m:Label text="Threat Level" />
+                <template>
+                    <m:Text
+                        text="{butterflies>Threat Level}"
+                        wrapping="false"
+                    />
+                </template>
+            </Column>
+        </columns>
+    </Table>
+</mvc:View>
