@@ -1,0 +1,42 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "ui5.walkthrough",
+    "i18n": "i18n/i18n.properties",
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "type": "application",
+    "applicationVersion": {
+      "version": "1.0.0"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.108.0",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {},
+        "sap.ui.table": {}
+      }
+    },
+    "models": {
+      "butterflies": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "butterflies.json"
+      }
+    },
+    "rootView": {
+      "viewName": "ui5.walkthrough.view.App",
+      "type": "XML",
+      "id": "app"
+    }
+  }
+}
