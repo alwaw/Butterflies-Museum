@@ -6,7 +6,7 @@ sap.ui.define(
     "sap/ui/model/FilterOperator",
     "sap/ui/model/FilterType",
   ],
-  function (Controller, JSONModel, Filter, FilterOperator, FilterType) {
+  function (Controller, JSONModel, Sorter, Filter, FilterOperator, FilterType) {
     "use strict";
 
     return Controller.extend("ui5.walkthrough.controller.App", {

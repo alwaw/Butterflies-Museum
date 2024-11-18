@@ -10,6 +10,7 @@
     <Table
         id="idTheMuseumOfButterflies"
         rows="{butterflies>/butterflies}"
+        enableCellFilter="true"
     >
         <extension>
             <m:OverflowToolbar style="Clear">
@@ -96,7 +97,10 @@
                     />
                 </template>
             </Column>
-            <Column>
+            <Column
+                sortProperty="Abundance"
+                sortOrder="Ascending"
+            >
                 <m:Label text="Abundance" />
                 <template>
                     <m:Text
@@ -105,7 +109,10 @@
                     />
                 </template>
             </Column>
-            <Column>
+            <Column
+                sortProperty="Color Rating"
+                sortOrder="Ascending"
+            >
                 <m:Label text="Color Rating" />
                 <template>
                     <m:Text
