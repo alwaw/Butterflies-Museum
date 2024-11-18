@@ -7,12 +7,19 @@
     xmlns:m="sap.m"
     height="100%"
 >
-    <Table rows="{butterflies>/butterflies}">
+    <Table
+        id="idTheMuseumOfButterflies"
+        rows="{butterflies>/butterflies}"
+    >
         <extension>
             <m:OverflowToolbar style="Clear">
-                <m:Title
-                    id="idTheMuseumOfButterflies"
-                    text="The Museum of Butterflies"
+                <m:Title text="The Museum of Butterflies" />
+                <m:SearchField
+                    id="searchField"
+                    placeholder="Filter"
+                    value="{ui>/globalFilter}"
+                    search=".onSearch"
+                    width="20%"
                 />
             </m:OverflowToolbar>
         </extension>
