@@ -2,6 +2,7 @@ sap.ui.define(
   [
     "sap/ui/core/mvc/Controller",
     "sap/m/MessageToast",
+    "sap/m/MessageBox",
     "sap/ui/model/json/JSONModel",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
@@ -10,6 +11,7 @@ sap.ui.define(
   function (
     Controller,
     MessageToast,
+    MessageBox,
     JSONModel,
     Filter,
     FilterOperator,
@@ -64,24 +66,40 @@ sap.ui.define(
       // Event handler for deleting selected row
       onDelete: function () {
         const oTable = this.byId("idTheMuseumOfButterflies");
-        const aSelectedIndices = oTable.getSelectedIndices(); //get selected rows
+        const aSelectedIndices = oTable.getSelectedIndices(); // Get selected rows
 
         if (aSelectedIndices.length > 0) {
-          const oModel = this.getView().getModel("butterflies");
-          const aDataArray = oModel.getProperty("/butterflies");
+          // Display confirmation dialog
+          sap.m.MessageBox.confirm(
+            "Are you sure you want to delete the selected rows?", // Message to show
+            {
+              onClose: function (sAction) {
+                if (sAction === sap.m.MessageBox.Action.OK) {
+                  // If user confirms, proceed with deletion
+                  const oModel = this.getView().getModel("butterflies");
+                  const aDataArray = oModel.getProperty("/butterflies");
 
-          // reverse the selected indices array to delete rows safely:
-          aSelectedIndices.reverse().forEach((iIndex) => {
-            aDataArray.splice(iIndex, 1);
-          });
+                  // Reverse the selected indices array to delete rows safely
+                  aSelectedIndices.reverse().forEach((iIndex) => {
+                    aDataArray.splice(iIndex, 1);
+                  });
 
-          //update the model with the modified data:
-          oModel.setProperty("/butterflies", aDataArray);
+                  // Update the model with the modified data
+                  oModel.setProperty("/butterflies", aDataArray);
 
-          //succes message:
-          sap.m.MessageToast.show("Selected rows deleted succesfully.");
+                  // Success message
+                  sap.m.MessageToast.show(
+                    "Selected rows deleted successfully."
+                  );
+                } else {
+                  // If user cancels, do nothing
+                  sap.m.MessageToast.show("Deletion canceled.");
+                }
+              }.bind(this),
+            }
+          );
         } else {
-          sap.m.MessageToast.show("Please select at least one row to delete");
+          sap.m.MessageToast.show("Please select at least one row to delete.");
         }
       },
     });
