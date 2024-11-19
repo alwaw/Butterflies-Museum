@@ -44,7 +44,10 @@
                     />
                 </template>
             </Column>
-            <Column>
+            <Column
+                filterProperty="Family"
+                filterable="true"
+            >
                 <m:Label text="Family" />
                 <template>
                     <m:Text
@@ -53,7 +56,10 @@
                     />
                 </template>
             </Column>
-            <Column>
+            <Column
+                filterProperty="Location"
+                filterable="true"
+            >
                 <m:Label text="Location" />
                 <template>
                     <m:Text
@@ -122,7 +128,10 @@
                     />
                 </template>
             </Column>
-            <Column>
+            <Column
+                filterProperty="Habitat"
+                filterable="true"
+            >
                 <m:Label text="Habitat" />
                 <template>
                     <m:Text
@@ -140,7 +149,10 @@
                     />
                 </template>
             </Column>
-            <Column>
+            <Column
+                filterProperty="Migration Pattern"
+                filterable="true"
+            >
                 <m:Label text="Migration Pattern" />
                 <template>
                     <m:Text
@@ -149,7 +161,10 @@
                     />
                 </template>
             </Column>
-            <Column>
+            <Column
+                filterProperty="Threat Level"
+                filterable="true"
+            >
                 <m:Label text="Threat Level" />
                 <template>
                     <m:Text
