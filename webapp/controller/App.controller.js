@@ -7,6 +7,8 @@ sap.ui.define(
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
     "sap/ui/model/FilterType",
+    "sap/m/SelectDialog",
+    "sap/ui/model/resource/ResourceModel",
   ],
   function (
     Controller,
@@ -15,7 +17,9 @@ sap.ui.define(
     JSONModel,
     Filter,
     FilterOperator,
-    FilterType
+    FilterType,
+    SelectDialog,
+    ResourceModel
   ) {
     "use strict";
 
@@ -23,6 +27,12 @@ sap.ui.define(
       onInit: function () {
         const oModel = new JSONModel("butterflies.json");
         this.getView().setModel(oModel, "butterflies");
+
+        // set 18n model on view:
+        const i18nModel = new ResourceModel({
+          bundleName: "ui5.walkthrough.i18n.i18n",
+        });
+        this.getView().setModel(i18nModel, "i18n");
       },
 
       // Event handler for sap.m.SearchField and filter
@@ -75,6 +85,7 @@ sap.ui.define(
             {
               onClose: function (sAction) {
                 if (sAction === sap.m.MessageBox.Action.OK) {
+                  oTable.setBusy(true);
                   // If user confirms, proceed with deletion
                   const oModel = this.getView().getModel("butterflies");
                   const aDataArray = oModel.getProperty("/butterflies");
@@ -87,6 +98,7 @@ sap.ui.define(
                   // Update the model with the modified data
                   oModel.setProperty("/butterflies", aDataArray);
 
+                  oTable.setBusy(false);
                   // Success message
                   sap.m.MessageToast.show(
                     "Selected rows deleted successfully."
@@ -112,6 +124,8 @@ sap.ui.define(
         sap.m.MessageBox.confirm("Are you sure you want to add new row?", {
           onClose: function (sAction) {
             if (sAction === sap.m.MessageBox.Action.OK) {
+              oTable.setBusy(true);
+
               // add new empty row:
               const oNewRow = {
                 GUID: "",
@@ -138,11 +152,23 @@ sap.ui.define(
               // focus on newly added row:
               const iNewRowIndex = aData.length - 1; // it is the last row in the model
               oTable.setFirstVisibleRow(iNewRowIndex);
-
+              oTable.setBusy(false);
               sap.m.MessageToast.show("New row has been added");
             } else return;
           },
         });
+      },
+
+      //event handler for "sum" button:
+
+      onSum: function () {
+        if (!this.oDialog) {
+          this.oDialog = new SelectDialog({
+            title: "Select a column",
+          });
+          this.getView().addDependent(this.oDialog);
+        }
+        this.oDialog.open();
       },
     });
   }
