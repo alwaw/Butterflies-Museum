@@ -15,19 +15,35 @@
     >
         <extension>
             <m:OverflowToolbar style="Clear">
-                <m:Title text="The Museum of Butterflies" />
+                <m:Title text="{i18n>title}" />
                 <m:SearchField
                     id="searchField"
-                    placeholder="Filter"
+                    placeholder="{i18n>placeholder}"
                     value="{ui>/globalFilter}"
                     search=".onSearch"
                     width="20%"
+                />
+                <m:Button
+                    text="{i18n>deleteButton}"
+                    icon="sap-icon://delete"
+                    press="onDelete"
+                />
+                <m:Button
+                    text="{i18n>createButton}"
+                    icon="sap-icon://add"
+                    press="onCreate"
+                />
+                <m:Button
+                    id="sumButton"
+                    text="{i18n>sumButton}"
+                    icon="sap-icon://sum"
+                    press="onSum"
                 />
             </m:OverflowToolbar>
         </extension>
         <columns>
             <Column>
-                <m:Label text="GUID" />
+                <m:Label text="{i18n>columnGUID}" />
                 <template>
                     <m:Text
                         text="{butterflies>GUID}"
@@ -36,7 +52,7 @@
                 </template>
             </Column>
             <Column>
-                <m:Label text="Name" />
+                <m:Label text="{i18n>columnName}" />
                 <template>
                     <m:Text
                         text="{butterflies>Name}"
@@ -48,7 +64,7 @@
                 filterProperty="Family"
                 filterable="true"
             >
-                <m:Label text="Family" />
+                <m:Label text="{i18n>columnFamily}" />
                 <template>
                     <m:Text
                         text="{butterflies>Family}"
@@ -60,7 +76,7 @@
                 filterProperty="Location"
                 filterable="true"
             >
-                <m:Label text="Location" />
+                <m:Label text="{i18n>columnLocation}" />
                 <template>
                     <m:Text
                         text="{butterflies>Location}"
@@ -69,7 +85,7 @@
                 </template>
             </Column>
             <Column>
-                <m:Label text="Date" />
+                <m:Label text="{i18n>columnDate}" />
                 <template>
                     <m:Text
                         text="{butterflies>Date}"
@@ -78,7 +94,7 @@
                 </template>
             </Column>
             <Column>
-                <m:Label text="Wingspan" />
+                <m:Label text="{i18n>columnWingspan}" />
                 <template>
                     <m:Text
                         text="{butterflies>Wingspan}"
@@ -87,7 +103,7 @@
                 </template>
             </Column>
             <Column>
-                <m:Label text="Weight" />
+                <m:Label text="{i18n>columnWeight}" />
                 <template>
                     <m:Text
                         text="{butterflies>Weight}"
@@ -96,7 +112,7 @@
                 </template>
             </Column>
             <Column>
-                <m:Label text="Price" />
+                <m:Label text="{i18n>columnPrice}" />
                 <template>
                     <m:Text
                         text="{butterflies>Price}"
@@ -108,7 +124,7 @@
                 sortProperty="Abundance"
                 sortOrder="Ascending"
             >
-                <m:Label text="Abundance" />
+                <m:Label text="{i18n>columnAbundance}" />
                 <template>
                     <m:Text
                         text="{butterflies>Abundance}"
@@ -120,7 +136,7 @@
                 sortProperty="Color Rating"
                 sortOrder="Ascending"
             >
-                <m:Label text="Color Rating" />
+                <m:Label text="{i18n>columnColorRating}" />
                 <template>
                     <m:Text
                         text="{butterflies>Color Rating}"
@@ -132,7 +148,7 @@
                 filterProperty="Habitat"
                 filterable="true"
             >
-                <m:Label text="Habitat" />
+                <m:Label text="{i18n>columnHabitat}" />
                 <template>
                     <m:Text
                         text="{butterflies>Habitat}"
@@ -141,7 +157,7 @@
                 </template>
             </Column>
             <Column>
-                <m:Label text="Lifespan" />
+                <m:Label text="{i18n>columnLifespan}" />
                 <template>
                     <m:Text
                         text="{butterflies>Lifespan}"
@@ -153,7 +169,7 @@
                 filterProperty="Migration Pattern"
                 filterable="true"
             >
-                <m:Label text="Migration Pattern" />
+                <m:Label text="{i18n>columnMigrationPattern}" />
                 <template>
                     <m:Text
                         text="{butterflies>Migration Pattern}"
@@ -165,7 +181,7 @@
                 filterProperty="Threat Level"
                 filterable="true"
             >
-                <m:Label text="Threat Level" />
+                <m:Label text="{i18n>columnThreatLevel}" />
                 <template>
                     <m:Text
                         text="{butterflies>Threat Level}"
