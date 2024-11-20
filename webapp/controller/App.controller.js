@@ -63,7 +63,7 @@ sap.ui.define(
           .filter(oCombinedFilter, FilterType.Application);
       },
 
-      // Event handler for deleting selected row
+      // Event handler for deleting selected row or rows
       onDelete: function () {
         const oTable = this.byId("idTheMuseumOfButterflies");
         const aSelectedIndices = oTable.getSelectedIndices(); // Get selected rows
@@ -101,6 +101,48 @@ sap.ui.define(
         } else {
           sap.m.MessageToast.show("Please select at least one row to delete.");
         }
+      },
+
+      // event handler for creating new row
+      onCreate: function () {
+        const oTable = this.byId("idTheMuseumOfButterflies");
+        const oModel = this.getView().getModel("butterflies");
+        const aData = oModel.getProperty("/butterflies");
+
+        sap.m.MessageBox.confirm("Are you sure you want to add new row?", {
+          onClose: function (sAction) {
+            if (sAction === sap.m.MessageBox.Action.OK) {
+              // add new empty row:
+              const oNewRow = {
+                GUID: "",
+                Name: "",
+                Family: "",
+                Location: "",
+                Date: "",
+                Wingspan: "",
+                Weight: "",
+                Price: "",
+                Habitat: "",
+                Lifespan: "",
+                "Migration Pattern": "",
+                "Threat Level": "",
+                Abundance: "",
+                "Color Rating": "",
+              };
+
+              aData.push(oNewRow); // push new row to butterflies model
+
+              // update data in model:
+              oModel.setProperty("/butterflies", aData);
+
+              // focus on newly added row:
+              const iNewRowIndex = aData.length - 1; // it is the last row in the model
+              oTable.setFirstVisibleRow(iNewRowIndex);
+
+              sap.m.MessageToast.show("New row has been added");
+            } else return;
+          },
+        });
       },
     });
   }
