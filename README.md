@@ -14,7 +14,7 @@ Zadanie udało mi się wykonać częściowo.
   
 ![obraz](https://github.com/user-attachments/assets/e73c03c8-8ab3-43df-89cf-a246d97db1af)
 </li>
-<li>sortowanie (dodałam je do kolumn z wartościami number, tj. Abundance oraz Color Rating):<br>
+<li>sortowanie (dodałam je do kolumn z wartościami number, tj. Abundance oraz Color Rating oraz do części kolumn z wartościami string - tam, gdzie nie ma liczb, tam wszystko działa, tam gdzie były liczby zapisane jako string, tam było źle :) Nie wiedziałam, jak przechwycić tę wartość i zrobić konwersację na Number, by sortowanie działało dobrze):<br>
   
 ![obraz](https://github.com/user-attachments/assets/6ee761b8-1e30-4b14-9df1-e0ded33481fc)
 </li>
@@ -47,11 +47,17 @@ Tego nie wykonałam.
 <li>7 - Przycisk do zmiany wartości pól:<br>
 Tego nie udało mi się wykonać. 
 </li>
-<li>8 - Przycisk do wyświetlania zsumowanej wartości wszystkich pól z wybranej kolumny:
+<li>8 - Przycisk do wyświetlania zsumowanej wartości wszystkich pól z wybranej kolumny: <br>
+Przycisk wywołuje okno, ale nie zdążyłam dodać wyboru kolumny (ale też nie wiedziałam, jak to zrobić) i, co za tym idzie, samego sumowania:
+  
+![obraz](https://github.com/user-attachments/assets/6e01cd65-5fc5-47c5-9579-9a4655c85802)
+
 </li>
-<li>9 - Busy Indicator:
+<li>9 - Busy Indicator: <br>
+Został dodany w dwóch miejscach - przy dodawaniu nowego wiersza oraz przy usuwaniu wiersza.
 </li>
-<li>10 - i18n: 
+<li>10 - i18n: <br>
+Zostało dodane (tylko w wersji domyślnej)
 </li>
 
 </ul>
